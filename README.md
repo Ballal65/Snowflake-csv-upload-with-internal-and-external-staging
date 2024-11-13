@@ -5,7 +5,8 @@ This repository is a tutorial and code reference for loading data into Snowflake
 Snowflake staging refers to temporarily storing data in a staging area within Snowflake before loading it into a table or after unloading it from a table. If we store data inside the Snowflake, we call it 'Internal Staging' If data is stored in AWS, Azure or GSP, we call it 'External Staging'. 
 
 
-## Internal Staging
+## Uploading pokedex.csv to Internal Stages
+
 ### STEP 1: CREATING A DATABASE & A SCHEMA (OPTIONAL)
 ```
 CREATE OR REPLACE DATABASE POKEDEX;
@@ -59,7 +60,7 @@ snowSQL is a command line tool which helps connect to Snowflake and run queries 
 [Use this link](https://www.snowflake.com/en/developers/downloads/snowsql/)
 
 
-### STEP 6: UPLOADING THE FILE TO SNOWFLAKE INTERNAL STAGE
+### STEP 6: UPLOADING THE FILE
 Snowflake has 3 types of internal stages. 
 1. Table Stage: Every table has a dedicated table stage. You need to be an owner or have appropriate privileges to use this. Files added to this stage can be only used for the table.
 2. User Stage: Every user of the account gets a dedicated user stage. Files in the user stage can be accessed by the user alone.
@@ -113,7 +114,23 @@ To PUT pokedex.csv file in NAMED_STAGE created in step 4.
 PUT 'file://E:/github projects/pokemon/csv/pokedex.csv' @POKEDEX.INTERVAL_STAGING.NAMED_STAGE;
 ```
 
-**WOW! We just uploaded a file to Snowflake. Now Let's upload the csv data to pokemon folder.**
+**WOW! We just uploaded a file to Snowflake. Now Let's upload the CSV data to the Pokemon folder.**
+To check the files in the stages
+```
+LIST @POKEDEX.PUBLIC.%POKEMON; -- Table Stage
+LIST @~; -- User Stage
+LIST @POKEDEX.INTERNAL_STAGING.NAMED_STAGE; -- Internal Named stage
+LIST @POKEMON.EXTERNAL_STAGING.EXTERNAL_S3_STAGE; -- External S3 Stage
+```
+
+## Uploading pokedex.csv to External Stage
+Follow the first 4 steps mentioned below. After that, we will need to create storage integration. I am using AWS S3. Maybe I will update this repository later to include Microsoft Azure and GSP. 
+For now, the goal is to upload the file into Snowflake from the AWS S3 bucket. 
+
+### STEP 1: Creating 
+
+
+
 
 
 
