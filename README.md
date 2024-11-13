@@ -46,11 +46,20 @@ CREATE OR REPLACE TABLE POKEDEX.PUBLIC.POKEMON(
     "Speed" INTEGER
 );
 ```
-### STEP 4: DOWNLOAD AND INSTALL snowSQL (if you haven't already)
+
+### STEP 4: CREATE INTERNAL NAMED STAGE (OPTIONAL): 
+```
+CREATE OR REPLACE STAGE POKEDEX.INTERVAL_STAGING.NAMED_STAGE
+FILE_FORMAT = POKEDEX.FILE_FORMATS.CSV_DATA
+COMMENT = 'THIS IS A NAMED STAGE SHARED BETWEEN ACCOUNTS';
+```
+
+### STEP 5: DOWNLOAD AND INSTALL snowSQL (if you haven't already)
 snowSQL is a command line tool which helps connect to Snowflake and run queries from your local machine. 
 [Use this link](https://www.snowflake.com/en/developers/downloads/snowsql/)
 
-### STEP 5: UPLOADING THE FILE TO SNOWFLAKE INTERNAL STAGE
+
+### STEP 6: UPLOADING THE FILE TO SNOWFLAKE INTERNAL STAGE
 Snowflake has 3 types of internal stages. 
 1. Table Stage: Every table has a dedicated table stage. You need to be an owner or have appropriate privileges to use this. Files added to this stage can be only used for the table.
 2. User Stage: Every user of the account gets a dedicated user stage. Files in the user stage can be accessed by the user alone.
@@ -69,7 +78,12 @@ Your account URL looks something like
 ```
 https://<identifier>.<region>.snowflakecomputing.com/
 ```
-In your local machine use the copied credentials to log in.
+In your local machine use the copied credentials to log in. -a flag is used for account identifier and -u flag is used for username.
+```
+snowsql -a <identifier>.<region> -u <username>
+```
+After login, you will see this. 
+
 ```
 > snowsql -a <identifier>.<region> -u <username>
 Password:
@@ -77,6 +91,31 @@ Password:
 Type SQL statements or !help
 USERNAME#COMPUTE_WH@(no database).(no schema)>
 ```
+Select database and schema. 
+```
+USE DATABASE POKEDEX;
+USE SCHEMA INTERVAL_STAGING;
+```
+The PUT command is used to copy files from the local machine to the Snowflake internal stages. 
+
+To PUT pokedex.csv file in the user stage
+```
+PUT 'file://your_file_address/pokedex.csv' @~;
+```
+
+To PUT pokedex.csv file in the table stage 
+```
+PUT 'file://your_file_address/pokedex.csv' @POKEDEX.PUBLIC.%POKEMON;
+```
+
+To PUT pokedex.csv file in NAMED_STAGE created in step 4.
+```
+PUT 'file://E:/github projects/pokemon/csv/pokedex.csv' @POKEDEX.INTERVAL_STAGING.NAMED_STAGE;
+```
+
+**WOW! We just uploaded a file to Snowflake. Now Let's upload the csv data to pokemon folder.**
+
+
 
 
 
