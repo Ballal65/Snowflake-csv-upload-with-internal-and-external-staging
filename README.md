@@ -12,7 +12,6 @@ CREATE OR REPLACE DATABASE POKEDEX;
 CREATE SCHEMA FILE_FORMATS;
 CREATE SCHEMA EXTERNAL_STAGING;
 CREATE SCHEMA INTERVAL_STAGING;
-
 ```
 ### STEP 2: CREATING FILE FORMAT
 ```
@@ -47,5 +46,16 @@ CREATE OR REPLACE TABLE POKEDEX.PUBLIC.POKEMON(
     "Speed" INTEGER
 );
 ```
+### STEP 4: DOWNLOAD AND INSTALL snowSQL (if you haven't already)
+snowSQL is a command line tool which helps connect to Snowflake and run queries from your local machine. 
+[Use this link](https://www.snowflake.com/en/developers/downloads/snowsql/)
+
+### STEP 5: UPLOADING THE FILE TO SNOWFLAKE INTERNAL STAGE
+Snowflake has 3 types of internal stages. 
+1. Table Stage: Every table has a dedicated table stage. You need to be an owner or have appropriate privileges to use this. Files added to this stage can be only used for the table.
+2. User Stage: Every user of the account gets a dedicated user stage. Files in the user stage can be accessed by the user alone.
+3. Named internal stage: Files stored in this stage can be accessed by multiple users.
+
+
 
 
