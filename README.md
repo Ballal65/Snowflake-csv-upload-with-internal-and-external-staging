@@ -64,10 +64,18 @@ Reference symbols:
 **Now, let's back to coding**
 
 Open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
-
-
+[Account](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/screenshot.png)
+Your account URL looks something like
 ```
-snowsql -a .ap-southeast-1 -u balliboy
+https://<identifier>.<region>.snowflakecomputing.com/
+```
+In your local machine use the copied credentials to log in.
+```
+> snowsql -a <identifier>.<region> -u <username>
+Password:
+* SnowSQL * v1.3.1
+Type SQL statements or !help
+USERNAME#COMPUTE_WH@(no database).(no schema)>
 ```
 
 
