@@ -56,6 +56,20 @@ Snowflake has 3 types of internal stages.
 2. User Stage: Every user of the account gets a dedicated user stage. Files in the user stage can be accessed by the user alone.
 3. Named internal stage: Files stored in this stage can be accessed by multiple users.
 
+Reference symbols: 
+- Table Stage: @<namespace>.%<table_name>
+- User Stage: @<namespace>.@~;
+- Named Stage: @<stage_name>
+
+**Now, let's back to coding**
+
+Open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
+
+
+```
+snowsql -a .ap-southeast-1 -u balliboy
+```
+
 
 
 
