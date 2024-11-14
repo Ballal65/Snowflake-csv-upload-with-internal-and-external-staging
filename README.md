@@ -127,7 +127,7 @@ LIST @POKEMON.EXTERNAL_STAGING.EXTERNAL_S3_STAGE; -- External S3 Stage
 Follow the first 4 steps mentioned below. After that, we will need to create storage integration. I am using AWS S3. Maybe I will update this repository later to include Microsoft Azure and GSP. 
 For now, the goal is to upload the file into Snowflake from the AWS S3 bucket. 
 
-### STEP 1: Creating 
+### STEP 1: Creating Storage Integration
 
 
 
