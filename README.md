@@ -3,3 +3,4 @@ This repository is a tutorial and code reference for loading data into Snowflake
 
 ## What is Staging? 
 Snowflake staging refers to temporarily storing data in a staging area within Snowflake before loading it into a table or after unloading it from a table. If data is stored inside Snowflake, we call it 'Internal Staging.' If data is stored in AWS, Azure, or GSP, we call it 'External Staging.' 
+   
