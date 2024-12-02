@@ -67,7 +67,7 @@ Reference symbols:
 **Now, let's back to coding**
 
 Open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
-[Account](`https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/screenshot.png`)
+![Account](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/raw/main/screenshot.png)
 Your account URL looks something like
 ```
 https://<identifier>.<region>.snowflakecomputing.com/
