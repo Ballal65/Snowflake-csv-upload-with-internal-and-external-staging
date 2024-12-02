@@ -67,7 +67,7 @@ Reference symbols:
 **Now, let's back to coding**
 
 Open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
-[Account](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/screenshot.png)
+[Account](`https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/screenshot.png`)
 Your account URL looks something like
 ```
 https://<identifier>.<region>.snowflakecomputing.com/
@@ -116,8 +116,3 @@ LIST @POKEDEX.INTERNAL_STAGING.NAMED_STAGE; -- Internal Named stage
 LIST @POKEMON.EXTERNAL_STAGING.EXTERNAL_S3_STAGE; -- External S3 Stage
 ```
 
-## Uploading pokedex.csv to External Stage
-Follow the first four steps mentioned below. After that, we will need to create storage integration. I am using AWS S3. I may update this repository later to include Microsoft Azure and GSP. 
-The goal is to upload the file into Snowflake from the AWS S3 bucket. 
-
-### STEP 1: Creating Storage Integration
