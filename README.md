@@ -13,6 +13,6 @@ snowSQL is a command line tool which helps connect to Snowflake and run queries 
 ## Repository Structure
 - internal_staging.md
   - [STEP 1: CREATING A DATABASE & A SCHEMA (OPTIONAL)](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/internal_staging.md#step-1-creating-a-database--a-schema-optional)
-  - STEP 2: CREATING FILE FORMAT
-  - STEP 3: CREATING THE POKEMON TABLE
-  - STEP 4: CREATE INTERNAL NAMED STAGE (OPTIONAL)
+  - [STEP 2: CREATING FILE FORMAT](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/internal_staging.md#step-2-creating-file-format)
+  - [STEP 3: CREATING THE POKEMON TABL](Ehttps://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/internal_staging.md#step-3-creating-the-pokemon-table)
+  - [STEP 4: CREATE INTERNAL NAMED STAGE (OPTIONAL)](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/blob/main/internal_staging.md#step-4-create-internal-named-stage-optional)
