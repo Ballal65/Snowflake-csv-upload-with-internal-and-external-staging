@@ -48,7 +48,7 @@ FILE_FORMAT = POKEDEX.FILE_FORMATS.CSV_DATA
 COMMENT = 'THIS IS A NAMED STAGE SHARED BETWEEN ACCOUNTS';
 ```
 
-### STEP 6: UPLOADING THE FILE
+### STEP 5: UPLOADING THE FILE
 Snowflake has 3 types of internal stages. 
 1. Table Stage: Every table has a dedicated table stage. You need to be an owner or have appropriate privileges to use this. Files added to this stage can be only used for the table.
 2. User Stage: Every user of the account gets a dedicated user stage. Files in the user stage can be accessed by the user alone.
@@ -59,15 +59,15 @@ Reference symbols:
 - User Stage: @<namespace>.@~;
 - Named Stage: @<stage_name>
 
-**Now, let's back to coding**
 
-Open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
+You can just open your terminal to log in to snowsql. To log in you will need your username and account URL. You can get these credentials by logging into your Snowflake account. 
 ![Account](https://github.com/Ballal65/Snowflake-csv-upload-with-internal-and-external-staging/raw/main/screenshot.png)
 Your account URL looks something like
 ```
 https://<identifier>.<region>.snowflakecomputing.com/
 ```
-In your local machine use the copied credentials to log in. -a flag is used for account identifier and -u flag is used for username.
+#### SnowSQL Login
+In your local machine, you can use the copied credentials to log in. -a flag is used for account identifier and -u flag is used for username.
 ```
 snowsql -a <identifier>.<region> -u <username>
 ```
@@ -108,6 +108,5 @@ To check the files in the stages
 LIST @POKEDEX.PUBLIC.%POKEMON; -- Table Stage
 LIST @~; -- User Stage
 LIST @POKEDEX.INTERNAL_STAGING.NAMED_STAGE; -- Internal Named stage
-LIST @POKEMON.EXTERNAL_STAGING.EXTERNAL_S3_STAGE; -- External S3 Stage
 ```
 
