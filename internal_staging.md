@@ -48,11 +48,6 @@ FILE_FORMAT = POKEDEX.FILE_FORMATS.CSV_DATA
 COMMENT = 'THIS IS A NAMED STAGE SHARED BETWEEN ACCOUNTS';
 ```
 
-### STEP 5: DOWNLOAD AND INSTALL snowSQL (if you haven't already)
-snowSQL is a command line tool which helps connect to Snowflake and run queries from your local machine. 
-[Use this link](https://www.snowflake.com/en/developers/downloads/snowsql/)
-
-
 ### STEP 6: UPLOADING THE FILE
 Snowflake has 3 types of internal stages. 
 1. Table Stage: Every table has a dedicated table stage. You need to be an owner or have appropriate privileges to use this. Files added to this stage can be only used for the table.
