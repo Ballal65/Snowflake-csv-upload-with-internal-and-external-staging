@@ -112,12 +112,14 @@ LIST @POKEDEX.INTERNAL_STAGING.NAMED_STAGE; -- Internal Named stage
 
 ### STEP 6: COPYING DATA FROM THE FILE TO THE TABLE
 To copy data from the stage, we need a simple copy into the command. Just uncomment the stage that you want to copy to and execute the following command. 
+```
 COPY INTO POKEDEX.PUBLIC.POKEMON
 -- FROM @~/pokedex.csv.gz  -- User Stage
 -- FROM @POKEMON.PUBLIC.%POKEMONS  -- Table Stage
 -- FROM @POKEMON.INTERNAL_STAGING.NAMED_STAGE -- Internal Named Storage
 -- FROM @POKEMON.EXTERNAL_STAGING.EXTERNAL_S3_STAGE/pokedex.csv -- External S3 stage
 FILE_FORMAT = POKEDEX.FILE_FORMATS.CSV_DATA;
+```
 
 We have successfully loaded the Pokemon table. To check this, you can run
 ```
