@@ -35,19 +35,18 @@ CREATE OR REPLACE TABLE POKEDEX.PUBLIC.POKEMON(
 --  Set Required external ID as  00000. We will update this later.
 -- Press next and in the next screen give appropriate permissions. For tutorial purposes, you can just select 'AmazonS3FullAccess'
 -- Press next, give a role name and create the role. 
--- I am naming this role as 'NiftySnowflakeIntegration'
 
 CREATE OR REPLACE STORAGE INTEGRATION S3_INTEGRATION
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = S3
-  -- A role with S3 access
+  -- ARN of the role we created above.
   STORAGE_AWS_ROLE_ARN = '<- An AWS ANR role with appropriate S3 permissions ->'
   ENABLED = TRUE
   STORAGE_ALLOWED_LOCATIONS = ('S3://< - Your S3 Bucket ->')
   COMMENT = 'Storage integration for S3 pokemon bucket';
 
 -- Storage_AWS_EXTERNAL_ID --> sts:ExternalId & STORAGE_AWS_IAM_USER_ARN --> AWS 
--- Update Trust policy of the ARN role with the the values from the following command.
+-- Update the Trust policy of the ARN role with the values from the following command.
 DESC INTEGRATION S3_INTEGRATION;
 
 
