@@ -28,6 +28,15 @@ CREATE OR REPLACE TABLE POKEDEX.PUBLIC.POKEMON(
     "Speed" INTEGER
 );
 
+-- To connect Snowflake with S3 we need a role with permissions. 
+-- I suggest creating a new role. Go to IAM > Create New Role
+-- Trusted entity type -> AWS Account
+-- An AWS account -> Select the option Require external ID (Best practice when a third party will assume this role)
+--  Set Required external ID as  00000. We will update this later.
+-- Press next and in the next screen give appropriate permissions. For tutorial purposes, you can just select 'AmazonS3FullAccess'
+-- Press next, give a role name and create the role. 
+-- I am naming this role as 'NiftySnowflakeIntegration'
+
 CREATE OR REPLACE STORAGE INTEGRATION S3_INTEGRATION
   TYPE = EXTERNAL_STAGE
   STORAGE_PROVIDER = S3
