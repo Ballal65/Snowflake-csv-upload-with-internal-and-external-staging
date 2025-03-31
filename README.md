@@ -7,7 +7,7 @@ Before you begin, ensure you have the following:
 2. SnowSQL CLI installed (for internal staging).
 3. AWS Account (for external staging).
 
-SnowSQL is a command-line tool that helps connect to Snowflake and run queries from your local machine  
+SnowSQL is a command-line tool that helps connect to Snowflake and run queries from your local machine.
 [Use this link to download SnowSQL](https://www.snowflake.com/en/developers/downloads/snowsql/)
 
 ## Repository Structure
